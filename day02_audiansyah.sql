@@ -58,8 +58,8 @@ add column transac_date timestamp DEFAULT CURRENT_TIMESTAMP,
 add column ref_no varchar(25),
 add column user_id int,
 add column bank_code varchar(4),
-add constraint user_id_fk foreign key (user_id) references oe.users(user_id),
-add constraint bank_code_fk foreign key (bank_code) references oe.bank(bank_code);
+add constraint user_id foreign key (user_id) references oe.users(user_id),
+add constraint bank_code foreign key (bank_code) references oe.bank(bank_code);
 
 select * from oe.orders
 
@@ -71,7 +71,7 @@ add column location_id int,
 add constraint location_id foreign key (location_id) references hr.locations(location_id)
 
 alter table oe.cart_items
-add constraint cart_product_id_fk foreign key (product_id) 
+add constraint cart_product_id foreign key (product_id) 
 references oe.products(product_id)
 
 update oe.orders as a
